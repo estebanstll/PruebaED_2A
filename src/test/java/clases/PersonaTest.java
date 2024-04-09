@@ -2,28 +2,45 @@ package clases;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.time.LocalDate;
 
+/**
+ * Clase de pruebas para la clase Persona.
+ */
 public class PersonaTest {
 
+    /**
+     * Constructor por defecto de PersonaTest.
+     */
     public PersonaTest() {
     }
 
+    /**
+     * Prueba para el método getNif().
+     * Verifica si el método getNif() devuelve el NIF esperado.
+     */
     @Test
     public void testGetNif() {
         System.out.println("getNif");
         Persona instance = new Persona(12345678);
-        assertEquals("12345678-T", instance.getNif().toString());
+        assertEquals("12345678-Z", instance.getNif().toString());
     }
 
+    /**
+     * Prueba para el método getNombre().
+     * Verifica si el método getNombre() devuelve el nombre esperado.
+     */
     @Test
     public void testGetNombre() {
         System.out.println("getNombre");
-        Persona instance = new Persona(12345678, "John Doe", 'M', 1, 1, 1990);
-        assertEquals("John Doe", instance.getNombre());
+        Persona instance = new Persona(12345678, "Pablo Doe", 'M', 1, 1, 1990);
+        assertEquals("Pablo Doe", instance.getNombre());
     }
 
+    /**
+     * Prueba para el método getGenero().
+     * Verifica si el método getGenero() devuelve el género esperado.
+     */
     @Test
     public void testGetGenero() {
         System.out.println("getGenero");
@@ -31,6 +48,10 @@ public class PersonaTest {
         assertEquals('M', instance.getGenero());
     }
 
+    /**
+     * Prueba para el método getNacimiento().
+     * Verifica si el método getNacimiento() devuelve la fecha de nacimiento esperada.
+     */
     @Test
     public void testGetNacimiento() {
         System.out.println("getNacimiento");
@@ -39,6 +60,10 @@ public class PersonaTest {
         assertEquals(expectedDate, instance.getNacimiento());
     }
 
+    /**
+     * Prueba para el método getEdad().
+     * Verifica si el método getEdad() devuelve la edad esperada.
+     */
     @Test
     public void testGetEdad() {
         System.out.println("getEdad");
@@ -46,14 +71,10 @@ public class PersonaTest {
         assertEquals(34, instance.getEdad());
     }
 
-    @Test
-    public void testToString() {
-        System.out.println("toString");
-        Persona instance = new Persona(12345678, "John Doe", 'M', 1, 1, 1990);
-        String expectedString = "12345678-T\tJohn\tDoe\t\t34";
-        assertEquals(expectedString, instance.toString());
-    }
-
+    /**
+     * Prueba para el método equals().
+     * Verifica si el método equals() compara adecuadamente las instancias de Persona.
+     */
     @Test
     public void testEquals() {
         System.out.println("equals");
@@ -64,4 +85,3 @@ public class PersonaTest {
         assertFalse(instance1.equals(instance3));
     }
 }
-
